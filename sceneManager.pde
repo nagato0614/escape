@@ -19,6 +19,9 @@ public class SceneManager {
     scenebases = new HashMap<String, SceneBase>();
     scenebases.put("title", new Title());
     scenebases.put("Map1", new Map1());
+    scenebases.put("Map2", new Map2());
+    scenebases.put("Map3", new Map3());
+    scenebases.put("Map4", new Map4());
   }
   
   //シーンを引数で指定したシーンに変更する
