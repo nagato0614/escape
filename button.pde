@@ -41,12 +41,16 @@ class Button {
 		this.alpha = a;
 	}
 
+	//ボタンの色を設定する(16進数)
+	public void setColor(int color) {
+		this.buttonColor = color
+	}
 
 	//ボタンを描写する(playメソッド内に記述)
 	public void drawButton() {
 		if (this.visible) {
 			rectMode(CORNER);
-			fill(this.buttonColor);
+			fill(this.buttonColor, this.alpha);
 			rect(this.startX, this.startY, this.endX, this.endY);
 		}
 	}
