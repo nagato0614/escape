@@ -33,9 +33,13 @@ abstract class MapBase extends SceneBase {
 	@Override
 	public void mouseHandle() {
 		if (leftButton.buttonClicked()) {
-			println("left");
+			turnLeft();
  		} else if (rightButton.buttonClicked()) {
- 			println("right");
+ 			turnRight();
  		}
 	}
+
+	//左右に向きを変えるボタンの動作を定義する
+	abstract private void turnLeft();
+	abstract private void turnRight();
 }
