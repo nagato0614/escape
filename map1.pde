@@ -7,8 +7,7 @@ class Map1 extends SceneBase {
 	public void play() {
 		background(255);
 
-		fill(0);
-		rect(10, 10, 100, 100);
+		itembar.drawItemBar();
 	}
 
 	@Override
