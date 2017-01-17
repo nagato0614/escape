@@ -10,8 +10,8 @@ class ItemBar {
 	public void drawItemBar() {
 		rectMode(CORNERS);
 		for (int i = 0; i < width / SIZE; i++) {
-			fill(50);
-			stroke(255);
+			fill(255);
+			stroke(0);
 			rect(i * SIZE, 0, i * SIZE + SIZE, SIZE);
 		}
 	}

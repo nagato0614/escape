@@ -8,6 +8,7 @@ class Map1 extends SceneBase {
 		background(255);
 
 		itembar.drawItemBar();
+		speech.drawSpeech();
 	}
 
 	@Override

@@ -3,6 +3,8 @@ import java.io.*;
 
 SceneManager sceneMng;	//シーンを一括で扱う
 ItemBar itembar;				//アイテムを表示するバー
+Speech speech;
+
 final int SCENE_NUMBER = 2;
 
 void setup() {
@@ -12,6 +14,9 @@ void setup() {
 
   //アイテムバーを作成
   itembar = new ItemBar();
+
+  //台詞を表示させる
+  speech = new Speech();
   
   sceneMng = new SceneManager();
   sceneMng.setScene("title");
