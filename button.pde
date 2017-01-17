@@ -42,8 +42,8 @@ class Button {
 	}
 
 	//ボタンの色を設定する(16進数)
-	public void setColor(int color) {
-		this.buttonColor = color
+	public void setColor(int c) {
+		this.buttonColor = c;
 	}
 
 	//ボタンを描写する(playメソッド内に記述)
