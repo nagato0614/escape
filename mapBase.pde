@@ -1,4 +1,4 @@
-abstract class mapBase extends SceneBase {
+abstract class MapBase extends SceneBase {
 
 	public final int BUTTON_WIDTH = 48;
 
@@ -6,7 +6,10 @@ abstract class mapBase extends SceneBase {
 	private Button rightButton;
 	private Button leftButton;
 
-	public mapBase() {
+	//背景画像を表示
+	PImage backgroundImage;
+
+	public MapBase() {
 		leftButton = new Button(0, itembar.SIZE, BUTTON_WIDTH, height - speech.SPEECH_HEIGHT);
 		rightButton = new Button(width - BUTTON_WIDTH, itembar.SIZE, BUTTON_WIDTH, height - speech.SPEECH_HEIGHT);
 
@@ -18,8 +21,13 @@ abstract class mapBase extends SceneBase {
 	public void play() {
 		background(255);
 
+		//背景画像を表示する
+		image(backgroundImage, 0, itembar.SIZE + 1);
+
+		//ボタンを表示
 		leftButton.drawButton();
 		rightButton.drawButton();
+		
 	}
 
 	@Override
