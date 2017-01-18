@@ -5,7 +5,7 @@ class Speech {
 	public final int SPEECH_HEIGHT = 100;
 
 	//現在表示されているテキスト
-	private String nowDrawedLine = "これは、てすとです";
+	private String nowDrawedLine = "";
 
 	//台詞を表示させるためのフォント
 	PFont lineFont;

@@ -6,15 +6,20 @@ abstract class MapBase extends SceneBase {
 	private Button rightButton;
 	private Button leftButton;
 
+	//なにもしないことをするぼたん
+	private Button nothingButton;
+
 	//背景画像を表示
 	PImage backgroundImage;
 
 	public MapBase() {
 		leftButton = new Button(0, itembar.SIZE, BUTTON_WIDTH, height - speech.SPEECH_HEIGHT);
 		rightButton = new Button(width - BUTTON_WIDTH, itembar.SIZE, BUTTON_WIDTH, height - speech.SPEECH_HEIGHT);
+		nothingButton = new Button(0, itembar.SIZE, width, height - speech.SPEECH_HEIGHT);
 
 		leftButton.setAlpha(100);
 		rightButton.setAlpha(100);
+		nothingButton.setAlpha(0);
 	}
 
 	@Override
@@ -39,6 +44,8 @@ abstract class MapBase extends SceneBase {
 			turnLeft();
  		} else if (rightButton.buttonClicked()) {
  			turnRight();
+ 		} else if (nothingButton.buttonClicked()) {
+ 			speech.setText("なにもない");
  		}
 	}
 

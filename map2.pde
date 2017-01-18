@@ -33,9 +33,10 @@ class Map2 extends MapBase {
 
 	@Override
 	public void mouseHandle() {
-		super.mouseHandle();
 		if (this.zoomShelf.buttonClicked()) {
 			sceneMng.setScene("zoomShelf");
+		} else {
+			super.mouseHandle();
 		}
 	}
 
