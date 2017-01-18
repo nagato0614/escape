@@ -1,15 +1,29 @@
-class Map3 extends SceneBase {
+class Map3 extends MapBase {
 
-		@Override
-	public void play() {
-		background(255);
-
-		fill(0);
-		rect(10, 10, 100, 100);
+	public Map3() {
+		super();
+		super.backgroundImage = loadImage("data/background3.png");
 	}
 
 	@Override
-	public void mouseHandle() {}
+	public void play() {
+		super.play();
+	}
+
+	@Override
+	protected void turnLeft() {
+		sceneMng.setScene("map2");
+	}
+
+	@Override
+	protected void turnRight() {
+		sceneMng.setScene("map4");
+	}
+
+	@Override
+	public void mouseHandle() {
+		super.mouseHandle();
+	}
 
 	@Override
 	public void keyHandle() {}

@@ -28,6 +28,9 @@ abstract class MapBase extends SceneBase {
 		leftButton.drawButton();
 		rightButton.drawButton();
 		
+		
+		itembar.drawItemBar();
+		speech.drawSpeech();
 	}
 
 	@Override

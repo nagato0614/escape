@@ -8,9 +8,6 @@ class Map1 extends MapBase {
 	@Override
 	public void play() {
 		super.play();
-
-		itembar.drawItemBar();
-		speech.drawSpeech();
 	}
 
 	@Override
