@@ -14,6 +14,16 @@ class Map1 extends MapBase {
 	}
 
 	@Override
+	protected void turnLeft() {
+		sceneMng.setScene("map4");
+	}
+
+	@Override
+	protected void turnRight() {
+		sceneMng.setScene("map2");
+	}
+
+	@Override
 	public void mouseHandle() {
 		super.mouseHandle();
 	}
