@@ -63,4 +63,13 @@ class Button {
 		}
 		return false;
 	}
+
+	//マウスがボタンの範囲内にある場合は真を返す
+	public boolean mouseIN() {
+		if (startX <= mouseX && mouseX <= startX + endX &&
+			startY <= mouseY && mouseY <= startY + endY) {
+			return true;
+		}
+		return false;
+	}
 }
