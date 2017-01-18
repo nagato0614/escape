@@ -18,6 +18,8 @@ abstract class ZoomSceneBase extends SceneBase {
 		//ボタンの初期化
 		backButton = new Button(0, height - BUTTON_HEIGHT - speech.SPEECH_HEIGHT,
 														width, height - speech.SPEECH_HEIGHT);
+
+		backButton.setAlpha(100);
 	}
 
 	@Override

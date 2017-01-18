@@ -17,7 +17,7 @@ class Map2 extends MapBase {
 	public void play() {
 		super.play();
 
-		this.zoomShelf.drawButton();
+		//this.zoomShelf.drawButton();
 	}
 
 	@Override
@@ -36,7 +36,6 @@ class Map2 extends MapBase {
 		super.mouseHandle();
 		if (this.zoomShelf.buttonClicked()) {
 			sceneMng.setScene("zoomShelf");
-			println("shelf");
 		}
 	}
 
