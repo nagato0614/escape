@@ -9,6 +9,9 @@ abstract class ZoomSceneBase extends SceneBase {
 	//元のシーン
 	private String beforeScene;
 
+	//何もしない事を示すボタン
+	Button nothingButton;
+
 	//ボタンの縦幅（横幅は画面サイズに合わせる)
 	public final int BUTTON_HEIGHT = 48;
 
@@ -18,8 +21,10 @@ abstract class ZoomSceneBase extends SceneBase {
 		//ボタンの初期化
 		backButton = new Button(0, height - BUTTON_HEIGHT - speech.SPEECH_HEIGHT,
 														width, height - speech.SPEECH_HEIGHT);
+		nothingButton = new Button(0, itembar.SIZE, width, height - speech.SPEECH_HEIGHT);
 
 		backButton.setAlpha(100);
+		nothingButton.setAlpha(0);
 	}
 
 	@Override
@@ -39,6 +44,8 @@ abstract class ZoomSceneBase extends SceneBase {
 	public void mouseHandle() {
 		if (backButton.buttonClicked()) {
 			sceneMng.setScene(this.beforeScene);
+		} else if (nothingButton.buttonClicked()) {
+			speech.setText("なにもない");
 		}
 	}
 }
