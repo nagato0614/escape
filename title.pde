@@ -7,6 +7,10 @@ class Title extends SceneBase {
 	//選択されているコマンドを示す
 	int selectedCommand = 0;
 
+  //コマンド用のボタン
+  Button start;
+  Button end;
+
 	//コマンドの数
 	private final int COMMAND = 2;
 
@@ -16,21 +20,44 @@ class Title extends SceneBase {
   public Title() {
   	titleFont = loadFont("MyricaMM-50.vlw");
   	menuFont = loadFont("MyricaMM-30.vlw");
+
+    start = new Button(X, 140, 150, 40);
+    end = new Button(X, 140 + Y, 150, 40);
+    start.setAlpha(0);
+    end.setAlpha(0);
   }
   
   @Override
   public void play() {
-   	//背景の初期化
+   	//初期化
   	background(255);
+    start.setAlpha(0);
+    end.setAlpha(0);
 
   	//タイトルの表示
   	drawTitle();
 
   	//選択されているこまんどの背景を濃くする
-  	drawSelected();
+  	//drawSelected();
 
   	//スタートボタンの表示
   	drawMenu();
+
+    //マウスがボタンに重なっているかどうかの判定
+    this.mouseIN();
+
+    //ボタンの表示
+    start.drawButton();
+    end.drawButton();
+  }
+
+  //マウスがメニューの範囲内に入っているかしらべる
+  private void mouseIN() {
+    if (start.buttonClicked()) {
+      start.setAlpha(200);
+    } else if (end.buttonClicked()) {
+      end.setAlpha(200);
+    }
   }
 
   private void drawTitle() {
@@ -108,5 +135,11 @@ class Title extends SceneBase {
   }
   
   @Override
-  public void mouseHandle() {}
+  public void mouseHandle() {
+    if (start.buttonClicked()) {
+      sceneMng.setScene("map1");
+    } else if (end.buttonClicked()) {
+      exit();
+    }
+  }
 }
