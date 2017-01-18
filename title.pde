@@ -4,8 +4,9 @@ class Title extends SceneBase {
 	PFont titleFont;
 	PFont menuFont;
 
-	//選択されているコマンドを示す
-	int selectedCommand = 0;
+  //コマンド用のボタン
+  Button start;
+  Button end;
 
 	//コマンドの数
 	private final int COMMAND = 2;
@@ -13,24 +14,45 @@ class Title extends SceneBase {
 	//メニューの設置位置(x)
 	private final int X = 300;
 	private final int Y = 70;		//こまんどごとの間隔
+
   public Title() {
   	titleFont = loadFont("MyricaMM-50.vlw");
   	menuFont = loadFont("MyricaMM-30.vlw");
+
+    start = new Button(X, 140, 150, 40);
+    end = new Button(X, 140 + Y, 150, 40);
+    start.setAlpha(0);
+    end.setAlpha(0);
   }
   
   @Override
   public void play() {
-   	//背景の初期化
+   	//初期化
   	background(255);
+    start.setAlpha(0);
+    end.setAlpha(0);
 
   	//タイトルの表示
   	drawTitle();
 
-  	//選択されているこまんどの背景を濃くする
-  	drawSelected();
-
   	//スタートボタンの表示
   	drawMenu();
+
+    //マウスがボタンに重なっているかどうかの判定
+    this.mouseIN();
+
+    //ボタンの表示
+    start.drawButton();
+    end.drawButton();
+  }
+
+  //マウスがメニューの範囲内に入っているかしらべる
+  private void mouseIN() {
+    if (start.buttonClicked()) {
+      start.setAlpha(200);
+    } else if (end.buttonClicked()) {
+      end.setAlpha(200);
+    }
   }
 
   private void drawTitle() {
@@ -46,67 +68,16 @@ class Title extends SceneBase {
   	text("終了", X, 170 + Y);
   }
 
-  //選択されている文字の背景を濃くする
-  private void drawSelected() {
-  	rectMode(CORNER);
-  	fill (210);
-  	stroke(210);
-  	rect(X, 180 + this.selectedCommand * Y, 150, -40);
-  }
-
-  private void up() {
-  	this.selectedCommand--;
-  	if (this.selectedCommand < 0) {
-  		this.selectedCommand = COMMAND - 1;
-  	}
-  }
-
-  private void down() {
-  	this.selectedCommand++;
-  	if (this.selectedCommand >= COMMAND) {
-  		this.selectedCommand = 0;
-  	}
-  }
-
-  private void enter() {
-    switch (this.selectedCommand) {
-      //スタートボタンが押された場合
-      case 0 :
-        sceneMng.setScene("map1");
-        break;
-      case 1 :
-        exit();
-        break;
-      default :
-            
-      break;  
-    }
-  }
-
   @Override
   public void keyHandle() {
-  	//文字以外の特殊なキーが押された場合
-  	if (key == CODED) {
-  		switch (keyCode) {
-  			case UP :
-  				this.up();
-  				break;
-  			case DOWN :
-  				this.down();
-  				break;
-        case ENTER :
-          println("enter");
-          break;
-  			default :
-  				
-  			break;	
-  		}
-  	} else {
-      if (key == 'z')
-        enter();
-    }
   }
   
   @Override
-  public void mouseHandle() {}
+  public void mouseHandle() {
+    if (start.buttonClicked()) {
+      sceneMng.setScene("map1");
+    } else if (end.buttonClicked()) {
+      exit();
+    }
+  }
 }
