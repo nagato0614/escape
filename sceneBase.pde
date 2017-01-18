@@ -10,9 +10,9 @@ abstract class SceneBase {
 
   //マウスが押された時に実行されるメソッド
   //マウスに対する操作があれば動作を記述する
-  public void mouseHandle();
+  public void mouseHandle() {}
   
   //キーが押されたときに実行されるメソッド
   //キーに対する操作があれば動作を記述する
-  public void keyHandle();
+  public void keyHandle() {}
 }
