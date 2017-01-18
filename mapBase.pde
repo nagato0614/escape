@@ -40,6 +40,6 @@ abstract class MapBase extends SceneBase {
 	}
 
 	//左右に向きを変えるボタンの動作を定義する
-	abstract private void turnLeft();
-	abstract private void turnRight();
+	protected void turnLeft() {}
+	protected void turnRight() {}
 }
