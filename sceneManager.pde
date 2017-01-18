@@ -22,6 +22,7 @@ public class SceneManager {
     scenebases.put("map2", new Map2());
     scenebases.put("map3", new Map3());
     scenebases.put("map4", new Map4());
+    scenebases.put("zoomShelf", new ZoomShelf("map2"));
   }
   
   //シーンを引数で指定したシーンに変更する
