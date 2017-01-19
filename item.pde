@@ -3,6 +3,9 @@ class ItemBase {
 	//アイテムの画像を保存する
 	PImage item;
 
+	//アイテムバー用の画像
+	PImage itembarImage;
+
 	//アイテムの表示座標
 	private int x;
 	private int y;
@@ -30,6 +33,7 @@ class ItemBase {
 class Note1 extends ItemBase {
 	public Note1() {
 		super(0, itembar.SIZE);
-		this.item = loadImage("data/note1.png");
+		super.item = loadImage("data/note1.png");
+		super.itembarImage = loadImage("data/note1_bar.png");
 	}
 }

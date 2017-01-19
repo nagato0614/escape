@@ -25,6 +25,8 @@ class ZoomShelf extends ZoomSceneBase {
 	public void mouseHandle() {
 		if (findNote.buttonClicked()) {
 			note.invisible();
+			speech.setText("1と書かれたメモを拾った");
+			itembar.addItem(note);
 		} else {
 			super.mouseHandle();
 		}
