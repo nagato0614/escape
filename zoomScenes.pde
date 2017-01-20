@@ -32,3 +32,20 @@ class ZoomShelf extends ZoomSceneBase {
 		}
 	}
 }
+
+class ZoomPlant extends ZoomSceneBase {
+	public ZoomPlant(String str) {
+		super(str);
+		super.backgroundImage = loadImage("data/ZoomPlant.png");
+	}
+
+	@Override
+	public void play() {
+		super.play();
+	}
+
+	@Override
+	public void mouseHandle() {
+		super.mouseHandle();
+	}
+}
