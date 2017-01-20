@@ -36,7 +36,7 @@ class ZoomShelf extends ZoomSceneBase {
 class ZoomPlant extends ZoomSceneBase {
 	public ZoomPlant(String str) {
 		super(str);
-		super.backgroundImage = loadImage("data/ZoomPlant.png");
+		super.backgroundImage = loadImage("data/zoomPlant.png");
 	}
 
 	@Override
