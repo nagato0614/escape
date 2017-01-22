@@ -13,6 +13,9 @@ class ItemBase {
 	//アイテムをマップに表示するか
 	private boolean itemVisible;
 
+	//アイテムの説明
+	public String explanation;
+
 	public ItemBase(int a, int b) {
 		this.x = a;
 		this.y = b;
@@ -35,5 +38,6 @@ class Note1 extends ItemBase {
 		super(0, itembar.SIZE);
 		super.item = loadImage("data/note1.png");
 		super.itembarImage = loadImage("data/note1_bar.png");
+		super.explanation = "「１」と書かれたメモ";
 	}
 }
