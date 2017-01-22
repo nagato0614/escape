@@ -16,6 +16,9 @@ class ItemBase {
 	//アイテムの説明
 	public String explanation;
 
+	//アイテムがクリックされているかどうか
+	private boolean itemClicked = true;
+
 	public ItemBase(int a, int b) {
 		this.x = a;
 		this.y = b;
@@ -30,6 +33,14 @@ class ItemBase {
 
 	public void invisible() {
 		this.itemVisible = false;
+	}
+
+	public void itemClick() {
+		this.itemClicked = false;
+	}
+
+	public boolean isClicked() {
+		return this.itemClicked;
 	}
 }
 
