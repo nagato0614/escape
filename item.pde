@@ -41,3 +41,14 @@ class Note1 extends ItemBase {
 		super.explanation = "「１」と書かれたメモ";
 	}
 }
+
+class Note2 extends ItemBase {
+	public Note2() {
+		super(0, itembar.SIZE);
+		upser.item = loadImage("data/note2.png");
+		super.itembarImage = loadImage("data/note2_bar.png");
+		super.explanation = "「３」と書かれたメモ";
+	}
+
+	
+}
