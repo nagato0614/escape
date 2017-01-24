@@ -11,7 +11,7 @@ class Speech {
 	PFont lineFont;
 
 	public Speech() {
-		lineFont = loadFont("MyricaMM-30.vlw");
+		lineFont = loadFont("MS-Gothic-30.vlw");
 	}	
 
 	public void drawSpeech() {
