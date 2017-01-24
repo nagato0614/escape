@@ -1,8 +1,13 @@
 class Map4 extends MapBase {
 	
+	//枕元の判定ボタン
+	private Button pillow;
+
 	public Map4() {
 		super();
 		super.backgroundImage = loadImage("data/background4.png");
+		pillow = new Button(65, 250, 79, 100);
+		//illow.setAlpha(100);
 	}
 
 	@Override
@@ -22,7 +27,11 @@ class Map4 extends MapBase {
 
 	@Override
 	public void mouseHandle() {
-		super.mouseHandle();
+		if (pillow.buttonClicked()) {
+			sceneMng.setScene("zoomBed");
+		} else {
+			super.mouseHandle();
+		}
 	}
 
 	@Override
