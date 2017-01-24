@@ -42,6 +42,7 @@ abstract class ZoomSceneBase extends SceneBase {
 
 	@Override
 	public void mouseHandle() {
+		itembar.clicked();
 		if (backButton.buttonClicked()) {
 			sceneMng.setScene(this.beforeScene);
 		} else if (nothingButton.buttonClicked()) {

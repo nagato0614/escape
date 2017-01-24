@@ -40,6 +40,7 @@ abstract class MapBase extends SceneBase {
 
 	@Override
 	public void mouseHandle() {
+		itembar.clicked();
 		if (leftButton.buttonClicked()) {
 			turnLeft();
  		} else if (rightButton.buttonClicked()) {
