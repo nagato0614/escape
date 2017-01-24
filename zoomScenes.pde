@@ -67,12 +67,13 @@ class ZoomPass extends ZoomSceneBase {
 			if (up[i].buttonClicked()) {
 				number[i] = ++number[i] % 10;
 				println(number[i]);
-			} 
-			if (down[i].buttonClicked()) {
+			} else if (down[i].buttonClicked()) {
 				number[i] = --number[i] % 10;
 				if (number[i] < 0)
 					number[i] = 9;
 				println(number[i]);
+			} else {
+				super.mouseHandle();
 			}
 		}
 		if (number[0] == 1 && number[1] == 9 && number[2] == 3) {
