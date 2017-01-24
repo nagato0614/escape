@@ -76,7 +76,7 @@ class ZoomPass extends ZoomSceneBase {
 			}
 		}
 		if (number[0] == 1 && number[1] == 9 && number[2] == 3) {
-			
+			sceneMng.setScene("end");
 		}
 	}
 }
