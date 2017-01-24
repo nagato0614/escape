@@ -58,7 +58,7 @@ class Title extends SceneBase {
   private void drawTitle() {
    	textFont(titleFont);
    	fill(0);
-   	text("脱出ゲーム(仮)", 230, 100);
+   	text("脱出ゲーム", 230, 100);
   }
 
   private void drawMenu() {
