@@ -60,6 +60,13 @@ class Note2 extends ItemBase {
 		super.itembarImage = loadImage("data/note2_bar.png");
 		super.explanation = "「３」と書かれたメモ";
 	}
+}
 
-
+class Note3 extends ItemBase {
+	public Note3() {
+		super(0, itembar.SIZE);
+		super.item = loadImage("data/note3.png");
+		super.itembarImage = loadImage("data/note3_bar.png");
+		super.explanation = "「９」書かれたメモ";
+	}
 }

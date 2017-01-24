@@ -7,7 +7,6 @@ class Map4 extends MapBase {
 		super();
 		super.backgroundImage = loadImage("data/background4.png");
 		pillow = new Button(65, 250, 79, 100);
-		//illow.setAlpha(100);
 	}
 
 	@Override
