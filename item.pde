@@ -70,3 +70,12 @@ class Note3 extends ItemBase {
 		super.explanation = "「９」書かれたメモ";
 	}
 }
+
+class Renga extends ItemBase {
+	public Renga() {
+		super(0, itembar.SIZE);
+		super.item = loadImage("data/renga.png");
+		super.itembarImage = loadImage("data/renga_bar.png");
+		super.explanation = "ただのレンガ";
+	}
+}
