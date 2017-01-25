@@ -4,7 +4,6 @@ import java.io.*;
 SceneManager sceneMng;	//シーンを一括で扱う
 ItemBar itembar;				//アイテムを表示するバー
 Speech speech;
-boolean CLEAR = false;
 
 final int SCENE_NUMBER = 2;
 
