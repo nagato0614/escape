@@ -36,14 +36,14 @@ void keyPressed() {
 
 class End extends SceneBase {
 	PFont font = createFont("Georgia", 32);
+	PImage image;
 	public End() {
+		super();
+		image = loadImage("data/clear.png");
 	}
 
 	@Override
 	public void play() {
-		background(255);
-		textFont(font);
-		fill(0);
-		text("clear", 0, 0);
+		image(this.image, 0, 48);
 	}
 }
