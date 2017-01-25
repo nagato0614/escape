@@ -4,10 +4,10 @@ abstract class ZoomSceneBase extends SceneBase {
 	protected PImage backgroundImage;
 	
 	//もとの画面に戻るボタン
-	private Button backButton;
+	protected Button backButton;
 
 	//元のシーン
-	private String beforeScene;
+	protected String beforeScene;
 
 	//何もしない事を示すボタン
 	Button nothingButton;

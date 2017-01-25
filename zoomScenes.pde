@@ -6,6 +6,9 @@ class ZoomPass extends ZoomSceneBase {
 	//下に数字が進むぼたん
 	Button[] down;
 
+	//登録ボタン
+	Button register;
+
 	//数字表示用のフォント
 	PFont font;
 
@@ -13,7 +16,7 @@ class ZoomPass extends ZoomSceneBase {
 	private int number[] = {0, 0, 0};
 
 	public final int PASS_WIDTH = 560;
-	public final int PASS_HEIGHT = 220;
+	public final int PASS_HEIGHT = 160;
 
 	public ZoomPass(String str) {
 		super(str);
@@ -21,11 +24,13 @@ class ZoomPass extends ZoomSceneBase {
 		this.font = createFont("Georgia", 60);
 		up = new Button[3];
 		down = new Button[3];
+		register = new Button(260, 400, 200, 50);
+		register.setColor(#FFBFC3);
 
 		for (int i = 0; i < 3; i++) {
 			up[i] = new Button(130 + i * PASS_WIDTH / 3, 80, 100, 50);
 			up[i].setColor(#FFFFFF);
-			down[i] = new Button(130 + i * PASS_WIDTH / 3, 390, 100, 50);
+			down[i] = new Button(130 + i * PASS_WIDTH / 3, 330, 100, 50);
 			down[i].setColor(#FFFFFF);
 		}
 	}
@@ -57,27 +62,33 @@ class ZoomPass extends ZoomSceneBase {
 			up[i].drawButton();
 			down[i].drawButton();
 		}
+		this.register.drawButton();
 
 		this.drawNumber();
 	}
 
 	@Override
 	public void mouseHandle() {
+		itembar.clicked();
+
+		//パスワートを入力確定ボタン
+		if (register.buttonClicked() && number[0] == 1 && number[1] == 9 && number[2] == 3) 
+			sceneMng.setScene("end");
+
+		//戻るボタン
+		if (super.backButton.buttonClicked()) {
+			sceneMng.setScene(this.beforeScene);
+		}
+
 		for (int i = 0; i < 3; i++) {
 			if (up[i].buttonClicked()) {
 				number[i] = ++number[i] % 10;
-				println(number[i]);
 			} else if (down[i].buttonClicked()) {
 				number[i] = --number[i] % 10;
-				if (number[i] < 0)
+				if (number[i] < 0) {
 					number[i] = 9;
-				println(number[i]);
-			} else {
-				super.mouseHandle();
+				}
 			}
-		}
-		if (number[0] == 1 && number[1] == 9 && number[2] == 3) {
-			sceneMng.setScene("end");
 		}
 	}
 }
